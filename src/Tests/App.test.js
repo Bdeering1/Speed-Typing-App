@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import SpeedTyping from './Components/Interface/Interface';
+import SpeedTyping from '../Components/Interface/Interface';
 
 test('renders learn react link', () => {
   render(<SpeedTyping />);

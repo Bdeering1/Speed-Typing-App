@@ -1,0 +1,10 @@
+@import '../../index.scss';
+
+@include media-breakpoint-down(sm) {
+    #title {
+        font-size: 3em;
+    }
+    #sub-title {
+        font-size: 1em;
+    }
+}

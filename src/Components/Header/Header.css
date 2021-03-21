@@ -6,4 +6,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-/*# sourceMappingURL=index.css.map */
+
+@media (max-width: 767.98px) {
+  #title {
+    font-size: 3em;
+  }
+  #sub-title {
+    font-size: 1em;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

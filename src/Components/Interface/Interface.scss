@@ -1,0 +1,21 @@
+@import '../../index.scss';
+
+
+.typing-area {
+    font-size: 1.1em;
+    border: none;
+}
+
+.banner {
+    background: #e9ecef;
+    opacity: 0.4;
+}
+
+@include media-breakpoint-up(md) {
+    main {
+        height: 75%!important;
+    }
+    .typing-area {
+        border: 1px solid #dee2e6;
+    }
+}

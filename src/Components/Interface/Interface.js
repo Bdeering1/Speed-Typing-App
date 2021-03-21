@@ -10,23 +10,37 @@ export default class SpeedTyping extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        vh: window.innerHeight / 100
+        vh: window.innerHeight / 100,
+        showTitle: true
       };
-      this.setInnerHeight = this.setInnerHeight.bind(this);
+      this.mainRef = React.createRef();
+      this.handleResize = this.handleResize.bind(this);
     }
 
     componentDidMount() {
-      window.addEventListener('resize', this.setInnerHeight);
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
     }
-
     componentWillUnmount() {
-      window.removeEventListener('resize', this.setInnerHeight);
+      window.removeEventListener('resize', this.handleResize);
     }
 
-    setInnerHeight() {
+    handleResize() {
       this.setState({
         vh: window.innerHeight / 100
-      })
+      });
+      this.setState({ //showTitle is updated separately main can re-render before checking overflow
+        showTitle: this.checkOverflow(this.mainRef.current) ? false : true
+      });
+    }
+
+    checkOverflow(el) { //https://stackoverflow.com/questions/143815/determine-if-an-html-elements-content-overflows
+      let curOverflow = el.style.overflow;
+      if ( !curOverflow || curOverflow === "visible" )
+        el.style.overflow = "hidden";
+      let isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
+      el.style.overflow = curOverflow;
+      return isOverflowing;
     }
 
     render() {
@@ -34,19 +48,25 @@ export default class SpeedTyping extends React.Component {
         <Container fluid
           className="p-0"
           style={{
-            height: 100 * this.state.vh || "100vh"
+            height: 100 * this.state.vh
           }}
         >
-          <Header />
-          <main className="h-75">
-            <Container className="interface d-flex justify-content-center rounded mt-4 bg-light border p-5 h-100">
-              <img className="position-absolute" src={blueIcon} alt="keyboard icon" style={{width: "100px", height: "100px"}}/>
-              <Col className="banner rounded bg-primary"></Col>
-              <Col className="my-auto m-5" lg="7">
+          <Header disp={this.state.showTitle}/>
+          <main
+            ref={this.mainRef}
+            className="mt-md-4"
+            style={{
+              height: this.state.showTitle ? 100 * this.state.vh - 92 : 100 * this.state.vh
+            }}
+          >
+            <Container className="typing-area h-100 p-md-5 d-flex justify-content-center rounded bg-md-light">
+              <img className="position-absolute d-none d-md-block" src={blueIcon} alt="keyboard icon" style={{width: "100px", height: "100px"}}/>
+              <Col className="banner d-none d-lg-block rounded bg-primary"></Col>
+              <Col className="my-auto lg-m-5" xs="12" lg="7">
                 <TypingCard />
                 <Timer />
               </Col>
-              <Col className="banner rounded bg-primary"></Col>
+              <Col className="banner d-none d-lg-block rounded bg-primary"></Col>
             </Container>
           </main>
         </Container>
