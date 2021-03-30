@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SpeedTyping from './Components/Interface/Interface'
+import SpeedTyping from './Components/SpeedTyping/SpeedTyping'
 import reportWebVitals from './Tests/reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
