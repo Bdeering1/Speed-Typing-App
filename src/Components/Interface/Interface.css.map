@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "ACKA,AAAA,IAAI,CAAC;EACD,sBAAsB,EAAE,WAAW;EACnC,uBAAuB,EAAE,SAAS;CACrC;;AAED,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,kEAAkE;CAClF;;ADTD,AAAA,YAAY,CAAC;EACT,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;CACf;;AAED,AAAA,OAAO,CAAC;EACJ,UAAU,EAAE,OAAO;EACnB,OAAO,EAAE,GAAG;CACf;;AKiDG,MAAM,EAAE,SAAS,EAAE,KAAK;EL9CxB,AAAA,IAAI,CAAC;IACD,MAAM,EAAE,GAAG,CAAA,UAAU;GACxB;EACD,AAAA,YAAY,CAAC;IACT,MAAM,EAAE,iBAAiB;GAC5B",
     "sources": [
-        "SpeedTyping.scss",
+        "Interface.scss",
         "../../index.scss",
         "../../../node_modules/bootstrap/scss/_mixins.scss",
         "../../../node_modules/bootstrap/scss/vendor/_rfs.scss",
@@ -41,5 +41,5 @@
         "../../../node_modules/bootstrap/scss/_variables.scss"
     ],
     "names": [],
-    "file": "SpeedTyping.css"
+    "file": "Interface.css"
 }

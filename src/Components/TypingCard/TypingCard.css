@@ -2,4 +2,13 @@
   height: 6rem;
   resize: none;
 }
+
+.correct {
+  color: var(--success);
+}
+
+.incorrect {
+  color: var(--danger);
+  text-decoration: underline;
+}
 /*# sourceMappingURL=TypingCard.css.map */

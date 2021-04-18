@@ -4,37 +4,25 @@ import Header from '../Header/Header'
 import TypingCard from '../TypingCard/TypingCard';
 import Timer from '../Timer/Timer'
 import blueIcon from '../../Resources/light blue icon.png'
-import './SpeedTyping.css';
-
-import getNextQuote from '../../Utilities/quote.js';
+import './Interface.css';
 
 export default class SpeedTyping extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        quote: '',
         vh: window.innerHeight / 100,
         showTitle: true
       };
       this.mainRef = React.createRef();
       this.handleResize = this.handleResize.bind(this);
-      this.getQuote = this.getQuote.bind(this);
     }
 
     componentDidMount() {
-      this.getQuote();
       window.addEventListener('resize', this.handleResize);
       this.handleResize();
     }
     componentWillUnmount() {
       window.removeEventListener('resize', this.handleResize);
-    }
-
-    async getQuote() {
-      let quote = await getNextQuote();
-      this.setState({
-        quote
-      })
     }
 
     handleResize() {
@@ -75,7 +63,7 @@ export default class SpeedTyping extends React.Component {
               <img className="position-absolute d-none d-md-block" src={blueIcon} alt="keyboard icon" style={{width: "100px", height: "100px"}}/>
               <Col className="banner d-none d-lg-block rounded bg-primary"></Col>
               <Col className="my-auto p-5" xs="12" lg="9">
-                <TypingCard quote={this.state.quote}/>
+                <TypingCard />
                 <Timer />
               </Col>
               <Col className="banner d-none d-lg-block rounded bg-primary"></Col>
