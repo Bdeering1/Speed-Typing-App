@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SpeedTyping from './Components/SpeedTyping/SpeedTyping'
+import Interface from './Components/Interface/Interface'
 import reportWebVitals from './Tests/reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <SpeedTyping />
+    <Interface />
   </React.StrictMode>,
   document.getElementById('root')
 );

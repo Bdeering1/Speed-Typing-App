@@ -15,7 +15,6 @@ export default class SpeedTyping extends React.Component {
       };
       this.mainRef = React.createRef();
       this.handleResize = this.handleResize.bind(this);
-      this.resetTimer = this.resetTimer.bind(this);
     }
 
     componentDidMount() {
