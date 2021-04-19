@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Speed-Typing-App/static/css/main.330796c4.chunk.css",
-    "main.js": "/Speed-Typing-App/static/js/main.9a5abd8d.chunk.js",
-    "main.js.map": "/Speed-Typing-App/static/js/main.9a5abd8d.chunk.js.map",
+    "main.js": "/Speed-Typing-App/static/js/main.496f6cbf.chunk.js",
+    "main.js.map": "/Speed-Typing-App/static/js/main.496f6cbf.chunk.js.map",
     "runtime-main.js": "/Speed-Typing-App/static/js/runtime-main.3ebd5544.js",
     "runtime-main.js.map": "/Speed-Typing-App/static/js/runtime-main.3ebd5544.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Speed-Typing-App/static/css/2.4c97ca4f.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.5e043013.chunk.js",
     "static/css/main.330796c4.chunk.css",
-    "static/js/main.9a5abd8d.chunk.js"
+    "static/js/main.496f6cbf.chunk.js"
   ]
 }
