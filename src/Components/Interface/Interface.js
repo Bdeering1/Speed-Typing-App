@@ -14,7 +14,10 @@ export default class SpeedTyping extends React.Component {
         showTitle: true
       };
       this.mainRef = React.createRef();
+      this.timerRef = React.createRef();
       this.handleResize = this.handleResize.bind(this);
+      this.getTime = this.getTime.bind(this);
+      this.resetTimer = this.resetTimer.bind(this);
     }
 
     componentDidMount() {
@@ -43,6 +46,14 @@ export default class SpeedTyping extends React.Component {
       return isOverflowing;
     }
 
+
+    getTime() {
+      return this.timerRef.current.getTime();
+    }
+    resetTimer() {
+      this.timerRef.current.resetTimer();
+    }
+
     render() {
       return (
         <Container fluid
@@ -63,8 +74,8 @@ export default class SpeedTyping extends React.Component {
               <img className="position-absolute d-none d-md-block" src={blueIcon} alt="keyboard icon" style={{width: "100px", height: "100px"}}/>
               <Col className="banner d-none d-lg-block rounded bg-primary"></Col>
               <Col className="my-auto p-5" xs="12" lg="9">
-                <TypingCard />
-                <Timer />
+                <TypingCard getTime={this.getTime} resetTimer={this.resetTimer}/>
+                <Timer ref={this.timerRef}/>
               </Col>
               <Col className="banner d-none d-lg-block rounded bg-primary"></Col>
             </Container>

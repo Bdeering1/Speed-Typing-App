@@ -8,29 +8,37 @@ export default class Timer extends React.Component {
       this.state = {
           time: 0
       };
-      this.startTimer = this.startTimer.bind(this);
+      this.resetTimer = this.resetTimer.bind(this);
+      this.getTime = this.getTime.bind(this);
+      this.secInterval = null;
     }
 
     componentDidMount() {
-      this.startTimer();
+      this.resetTimer();
     }
 
-    startTimer() {
+    getTime() {
+      return this.state.time;;
+    }
+
+    resetTimer() {
       this.setState({
         time: 0
       })
       let startTime = new Date();
-      setInterval(() => {
+      if (this.secInterval != null)
+        clearInterval(this.secInterval);
+      this.secInterval = setInterval(() => {
         let currentTime = Math.floor((new Date() - startTime) / 1000); //ensure time is accurate
         this.setState({
           time: currentTime
         });
-      }, 1000)
+      }, 1000);
     }
 
     render() {
       return (
-        <Container className="timer text-center" id="timer">
+        <Container id="timer" className="timer text-center">
           {this.state.time}
         </Container>
       );
