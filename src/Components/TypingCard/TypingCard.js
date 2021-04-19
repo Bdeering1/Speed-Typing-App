@@ -61,7 +61,12 @@ export default class TypingCard extends React.Component {
         })
         if (allCorrect) {
             this.renderNewQuote();
+            this.resetTimer();
         }
+    }
+
+    resetTimer() {
+
     }
 
     render() {
